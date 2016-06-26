@@ -15,12 +15,17 @@
 	
 	<bean id="defaultOrdersEndpoint" class="com.pluralsight.cxfdemo.orders.DefaultOrdersEndpoint"></bean>
 	
+	<bean id="orderServiceSoapHeaderInInterceptor" class="com.pluralsight.cxfdemo.orders.OrderServiceSoapHeaderInInterceptor"></bean>
+	
+	<bean id="orderServiceSoapHeaderOutInterceptor" class="com.pluralsight.cxfdemo.orders.OrderServiceSoapHeaderOutInterceptor"></bean>
+	
 	<jaxws:server id="testOrdersServer"
 		address="http://localhost:9000/apache-cxf-jax-ws-demo/services/orders"
 		serviceBean="#defaultOrdersEndpoint"
 		serviceClass="com.pluralsight.service.orders.Orders">
 		<jaxws:inInterceptors>
 			<ref bean="logginInInterceptor" />
+			<ref bean="orderServiceSoapHeaderInInterceptor" />
 		</jaxws:inInterceptors>
 		
 		<jaxws:outInterceptors>
@@ -40,6 +45,7 @@
 		
 		<jaxws:outInterceptors>
 			<ref bean="logginOutInterceptor" />
+			<ref bean="orderServiceSoapHeaderOutInterceptor" />
 		</jaxws:outInterceptors>	
 	</jaxws:client>
 	

@@ -20,5 +20,12 @@
 	  
 	<jaxws:endpoint id="orders"
 		implementor="com.pluralsight.cxfdemo.orders.DefaultOrdersEndpoint"
-		address="/services/orders"/>
+		address="/services/orders">
+		<jaxws:inInterceptors>
+			<ref bean="orderServiceSoapHeaderInInterceptor" />
+		</jaxws:inInterceptors>	
+	</jaxws:endpoint>
+			
+	<bean id="orderServiceSoapHeaderInInterceptor" class="com.pluralsight.cxfdemo.orders.OrderServiceSoapHeaderInInterceptor"></bean>
+	
 </beans>
