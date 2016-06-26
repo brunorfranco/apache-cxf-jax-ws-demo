@@ -14,6 +14,13 @@
 		</xsd:sequence>
 	</xsd:complexType>
 	
+		<xsd:complexType name="OrderInquiryResponseType">
+		<xsd:sequence>
+			<xsd:element name="order" minOccurs="1" maxOccurs="unbounded" type="tns:OrderType"></xsd:element>
+			<xsd:element name="account" minOccurs="1" maxOccurs="1" type="tns:AccountType"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	
 	<xsd:complexType name="AccountType">
 		<xsd:sequence>
 			<xsd:element name="accountId" minOccurs="1" maxOccurs="1" type="xsd:int"></xsd:element>
@@ -49,13 +56,6 @@
 		<xsd:sequence>
 			<xsd:element name="orderItems" minOccurs="1" maxOccurs="unbounded" type="tns:OrderItemType"></xsd:element>
 			<xsd:element name="orderStatus" minOccurs="1" maxOccurs="1" type="tns:OrderStatusType"></xsd:element>
-		</xsd:sequence>
-	</xsd:complexType>
-	
-	<xsd:complexType name="OrderInquiryResponseType">
-		<xsd:sequence>
-			<xsd:element name="order" minOccurs="1" maxOccurs="unbounded" type="tns:OrderType"></xsd:element>
-			<xsd:element name="account" minOccurs="1" maxOccurs="1" type="tns:AccountType"></xsd:element>
 		</xsd:sequence>
 	</xsd:complexType>
 	

@@ -71,6 +71,7 @@
     						<wsdlOptions>
     							<wsdlOption>
     								<wsdl>${basedir}/src/main/resources/wsdl/Orders.wsdl</wsdl>
+    								<wsdl>${basedir}/src/main/resources/wsdl/Flights.wsdl</wsdl>
     							</wsdlOption>
     						</wsdlOptions>
     					</configuration>
